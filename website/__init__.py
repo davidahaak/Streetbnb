@@ -14,7 +14,6 @@ def create_app():
     from .views import views
     app.register_blueprint(views, url_prefix='/')
 
-    # Import your actual models (e.g., Car), not User or Note
     from .models import Car
 
     with app.app_context():
