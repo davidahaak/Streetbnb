@@ -67,14 +67,6 @@
 
 {% block javascript %}
     <script type="text/javascript">
-      function deleteNote(noteId) {
-  fetch("/delete-note", {
-    method: "POST",
-    body: JSON.stringify({ noteId: noteId }),
-  }).then((_res) => {
-    window.location.href = "/";
-  });
-  }
 </script>
 <footer class="bg-dark text-white text-center py-3 mt-5">
   <small>© 2025 Streetbnb. All rights reserved.</small>
