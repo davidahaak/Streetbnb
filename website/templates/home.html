@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}Home - Streetbnb{% endblock %}
+
+{% block content %}
+<style>
+.hero {
+  background: url("{{ url_for('static', filename='images/background.jpg') }}") center/cover no-repeat;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-content h1,
+.hero-content p {
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+}
+</style>
+
+<div class="hero">
+<div class="hero-content">
+<h1 class="display-3">Drive into Your Perfect Season!</h1>
+<p>Rent a car for weeks or months at top seasonal destinations.</p>
+<form class="row g-2 justify-content-center mt-4">
+<div class="col-md-4 mx-auto">
+<input type="text" class="form-control" placeholder="Search location (e.g., Aspen)">
+</div>
+ <div class="col-md-2">
+<button class="btn btn-primary w-100">Search</button>
+ </div>
+ </form>
+</div>
+</div>
+
+<div class="container py-5">
+<h2 class="text-center mb-4">Popular Seasonal Destinations</h2>
+<div class="row g-4">
+  <div class="col-md-4">
+  <div class="card shadow-sm">
+<img src="{{ url_for('static', filename='images/aspen.jpg') }}" class="card-img-top" alt="Aspen">
+  <div class="card-body">
+  <h5 class="card-title">Aspen</h5>
+  <p class="card-text">Snow-covered mountains and luxury seasonal rentals in a skier’s paradise.</p>
+    </div>
+    </div>
+    </div>
+    
+  <div class="col-md-4">
+  <div class="card shadow-sm">
+    <img src="{{ url_for('static', filename='images/palm beach.jpg') }}" class="card-img-top" alt="Palm Beach">
+  <div class="card-body">
+   <h5 class="card-title">Palm Beach</h5>
+   <p class="card-text">Cruise in the sun along Florida’s coastlines.</p>
+  </div>
+   </div>
+    </div>
+    <div class="col-md-4">
+  <div class="card shadow-sm">
+    <img src="{{ url_for('static', filename='images/cape cod.jpg') }}" class="card-img-top" alt="Cape Cod">
+<div class="card-body">
+<h5 class="card-title">Cape Cod</h5>
+<p class="card-text">Charming seaside drives with long-term vehicle options.</p>
+ </div>
+ </div>
+ </div>
+  </div>
+</div>
+{% endblock %}
