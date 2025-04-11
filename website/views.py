@@ -47,3 +47,8 @@ def book_car(car_id):
         return redirect(url_for('views.list_cars'))
 
     return render_template('book_car.html', car=car)
+
+@views.route('/about')
+def about():
+    return render_template('about.html')
+
