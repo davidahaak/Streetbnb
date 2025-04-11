@@ -23,7 +23,7 @@
   <div class="hero-content">
     <h1 class="display-3">Drive into Your Perfect Season!</h1>
     <p>Rent a car for weeks or months at top seasonal destinations.</p>
-    <form class="row g-2 justify-content-center mt-4" method="POST" action="{{ url_for('views.list_cars') }}">
+    <form class="row g-2 justify-content-center mt-4" method="POST" action="{{ url_for('views.list_cars') }}" autocomplete="off">
       <div class="col-md-4 mx-auto">
         <input type="text" class="form-control" name="location" placeholder="Search location (e.g., Aspen)" required>
       </div>
