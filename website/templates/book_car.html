@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Book {{ car.brand }} {{ car.model }} - Streetbnb{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Book {{ car.brand }} {{ car.model }}</h2>
+
+    <div class="card mb-4 shadow-sm">
+        <div class="row g-0">
+            <div class="col-md-5">
+                <img src="{{ url_for('static', filename=car.image_url) }}" class="img-fluid rounded-start" alt="{{ car.brand }} {{ car.model }}">
+            </div>
+            <div class="col-md-7">
+                <div class="card-body">
+                    <h5 class="card-title">{{ car.brand }} {{ car.model }}</h5>
+                    <p class="card-text">
+                        Year: {{ car.year }}<br>
+                        Location: {{ car.location }}<br>
+                        Season: {{ car.season }}<br>
+                        Price: ${{ car.price_per_day }} per day
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Form -->
+    <form method="POST">
+        <div class="mb-3">
+            <label for="name" class="form-label">Your Name (optional)</label>
+            <input type="text" name="name" id="name" class="form-control" placeholder="John Doe">
+        </div>
+
+        <div class="mb-3">
+            <label for="start_date" class="form-label">Start Date</label>
+            <input type="date" name="start_date" id="start_date" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="end_date" class="form-label">End Date</label>
+            <input type="date" name="end_date" id="end_date" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-success">Confirm Booking</button>
+        <a href="{{ url_for('views.list_cars') }}" class="btn btn-secondary ms-2">Cancel</a>
+    </form>
+</div>
+{% endblock %}
