@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-from .models import Car, Booking  # Added Booking model
+from .models import Car, Booking  
 from . import db
 
 views = Blueprint('views', __name__)
@@ -20,7 +20,7 @@ def list_cars():
         
         return render_template('car_list.html', cars=cars)
 
-    # GET request fallback
+    
     cars = Car.query.filter_by(is_available=True).all()
     return render_template('car_list.html', cars=cars)
 
@@ -43,7 +43,7 @@ def book_car(car_id):
         db.session.add(booking)
         db.session.commit()
 
-        flash('✅ Booking successful!')
+        flash('Booking successful!')
         return redirect(url_for('views.list_cars'))
 
     return render_template('book_car.html', car=car)

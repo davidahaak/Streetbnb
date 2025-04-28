@@ -19,21 +19,21 @@
     <div class="row">
         {% for car in cars %}
         <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm">
-                <img src="{{ url_for('static', filename=car.image_url) }}" class="card-img-top" alt="{{ car.brand }} {{ car.model }}">
-                <div class="card-body">
-                    <h5 class="card-title">{{ car.brand }} {{ car.model }}</h5>
-                    <p class="card-text">
-                        Year: {{ car.year }}<br>
-                        Location: {{ car.location }}<br>
-                        Season: {{ car.season }}
-                    </p>
-                    <p class="fw-bold">${{ car.price_per_day }} per day</p>
-                    <a href="{{ url_for('views.book_car', car_id=car.id) }}" class="btn btn-primary">Book Now</a>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
+       <div class="card h-100 shadow-sm">
+     <img src="{{ url_for('static', filename=car.image_url) }}" class="card-img-top" alt="{{ car.brand }} {{ car.model }}">
+    <div class="card-body">
+     <h5 class="card-title">{{ car.brand }} {{ car.model }}</h5>
+       <p class="card-text">
+      Year: {{ car.year }}<br>
+     Location: {{ car.location }}<br>
+    Season: {{ car.season }}
+     </p>
+      <p class="fw-bold">${{ car.price_per_day }} per day</p>
+       <a href="{{ url_for('views.book_car', car_id=car.id) }}" class="btn btn-primary">Book Now</a>
+     </div>
+      </div>
+       </div>
+    {% endfor %}
     </div>
 </div>
 {% endblock %}
