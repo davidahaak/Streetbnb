@@ -13,7 +13,7 @@ class Car(db.Model):
     location = Column(String(100), nullable=False)
     is_available = Column(Boolean, default=True)
     image_url = Column(String(255))
-    season = Column(String(50))  # e.g., "Winter", "Summer", etc.
+    season = Column(String(50))  
 
     bookings = relationship('Booking', backref='car', cascade="all, delete-orphan")
 

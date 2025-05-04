@@ -7,7 +7,7 @@ def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'abcdefghijklmnop'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:18427DaH#@localhost:3306/streetbnb_db'
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Optional but recommended
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  
 
     db.init_app(app)
 
